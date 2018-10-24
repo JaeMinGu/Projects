@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>test</title>
+<script type="text/javascript" src="js/Account.js"></script>
+<script type="text/javascript" src="js/MinusAccount.js"></script>
+<script type="text/javascript" src="js/AccountManager.js"></script>
+</head>
+<body>
+<script type="text/javascript">
+// Account
+var account = new Account('1111-2222', '김예금', 1111, 1000);
+//console.log(account.number);
+
+// MinusAccount
+var minusAccount = new MinusAccount('9999-1111', '김대출', 1111, 10000, 20000);
+//console.log(minusAccount.number);
+//console.log(minusAccount.owner);
+//console.log(minusAccount.password);
+//console.log(minusAccount.restMoney);
+//console.log(minusAccount.borrowMoney);
+
+// AccountManager
+var accountManager = new AccountManager();
+
+console.log(accountManager.add(new Account('1111-2222', '김예금', 1111, 0)));
+console.log(accountManager.add(new Account('2222-3333', '나예금', 2222, 100)));
+console.log(accountManager.add(new Account('3333-4444', '다예금', 3333, 1000)));
+console.log(accountManager.add(new Account('4444-5555', '라예금', 4444, 10000)));
+console.log(accountManager.add(new Account('5555-6666', '마예금', 5555, 100000)));
+console.log(accountManager.add(new Account('6666-7777', '마예금', 5555, 100000)));
+
+console.log(accountManager.add(new MinusAccount('9999-1111', '가대출', 5555, 100000)));
+console.log(accountManager.add(new MinusAccount('9999-2222', '나대출', 7777, 11111)));
+console.log(accountManager.add(new MinusAccount('9999-2222', '나대출', 7777, 11111)));
+
+console.log(accountManager.listAll());
+//console.log(accountManager.getAccount("1111-2222"));
+console.log(accountManager.searchAccount("김예금"));
+console.log(accountManager.searchAccount("마예금"));
+
+</script>
+</body>
+</html>
